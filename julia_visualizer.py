@@ -78,7 +78,11 @@ def main():
         im.set_extent([xlim[0], xlim[1], ylim[0], ylim[1]])
         return [im]
 
-    FuncAnimation(fig, zoom, frames=200, interval=50, blit=False)
+    # Store the animation object so it isn't garbage collected prematurely
+    anim = FuncAnimation(fig, zoom, frames=200, interval=50, blit=False)
+
+    # Keep a reference to the animation in the figure object for clarity
+    fig.anim = anim
 
     plt.show()
 
