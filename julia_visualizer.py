@@ -78,7 +78,6 @@ def main():
         im.set_extent([xlim[0], xlim[1], ylim[0], ylim[1]])
         return [im]
 
-0vha7j-codex/animate-visualizer-zoom-effect
     # Store the animation object so it isn't garbage collected prematurely
     anim = FuncAnimation(fig, zoom, frames=200, interval=50, blit=False)
 
